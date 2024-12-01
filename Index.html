@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Good colchões</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #B3B3B3;
+            color: white;
+            font-size:15px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            margin-top: -35px;
+        }
+        nav {
+            margin-top: 20px;
+            text-align: center;
+        }
+        nav a {
+            color: #333;
+            margin: 0 20px;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        .image {
+            width: 100%; /* Faz a imagem cobrir a largura da tela */
+            height: 300px; /* Define uma altura fixa, mas pode ser ajustada */
+            overflow: hidden; /* Esconde partes da imagem que ultrapassam a área */
+            margin-top: 17px;
+        }
+        .image img {
+            width: 100%; /* Garante que a imagem ocupe toda a largura */
+            height: 70%; /* Garante que a imagem ocupe toda a altura */
+            object-fit: cover; /* Faz com que a imagem cubra todo o espaço sem distorção */
+        }
+        .social-icons {
+            position: fixed; /* Fixa os ícones na tela */
+            bottom: 20px; /* Distância da parte inferior */
+            left: 50%; /* Centraliza os ícones horizontalmente */
+            transform: translateX(-50%); /* Ajusta para que a centralização seja exata */
+            display: flex; /* Flexbox para alinhar horizontalmente */
+            justify-content: center; /* Centraliza os ícones */
+            align-items: center; /* Garante o alinhamento vertical */
+            z-index: 999; /* Coloca os ícones acima de outros elementos */
+        }
+        .social-icons a {
+            margin: 0 10px;
+            font-size: 24px;
+            color: white;
+            text-decoration: none;
+        }
+        .social-icons img {
+            width: 40px;
+            height: 40px;
+        }
+        .products-link {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+        .hidden {
+            display: none;
+        }
+        .product {
+            background-color: white;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .product img {
+            width: 80%;
+            border-radius: 8px;
+        }
+        
+      
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>𝑮𝒐𝒐𝒅 𝒄𝒐𝒍𝒄𝒉𝒐𝒆𝒔</h1>
+</header>
+
+<nav>
+    <a href="#" onclick="showPage('home')">Início</a>
+    <a href="#" onclick="showPage('produtos')">Produtos</a>
+</nav>
+
+<!-- Imagem que será escondida ou mostrada -->
+<div id="image-container" class="image">
+    <img src="">
+</div>
+
+<div id="home">
+    <div class="social-icons">
+        <!-- Ícones de redes sociais -->
+        <a href="https://wa.me/1234567890" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+        </a>
+        <a href="https://www.instagram.com/seuusuario/" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+        </a>
+    </div>
+</div>
+
+<div id="produtos" class="hidden">
+    <!-- Produto 1 -->
+    <div class="product">
+        <h2>Produto 1</h2>
+        <img src="https://via.placeholder.com/400x300" alt="Produto 1">
+        <p>Descrição do Produto 1.</p>
+    </div>
+
+    <!-- Produto 2 -->
+    <div class="product">
+        <h2>Produto 2</h2>
+        <img src="https://via.placeholder.com/400x300" alt="Produto 2">
+        <p>Descrição do Produto 2.</p>
+    </div>
+
+    <!-- Produto 3 -->
+    <div class="product">
+        <h2>Produto 3</h2>
+        <img src="https://via.placeholder.com/400x300" alt="Produto 3">
+        <p>Descrição do Produto 3.</p>
+    </div>
+</div>
+
+<script>
+    function showPage(page) {
+        // Esconde todas as seções
+        document.getElementById('home').classList.add('hidden');
+        document.getElementById('produtos').classList.add('hidden');
+        
+        // Mostra a seção selecionada
+        document.getElementById(page).classList.remove('hidden');
+
+        // Controla a visibilidade da imagem
+        if (page === 'produtos') {
+            document.getElementById('image-container').classList.add('hidden'); // Esconde a imagem
+        } else {
+            document.getElementById('image-container').classList.remove('hidden'); // Mostra a imagem
+        }
+    }
+
+    // Mostrar a página inicial por padrão
+    showPage('home');
+</script>
+
+</body>
+</html>
+
